@@ -1,0 +1,16 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: microservicio-usuarios
+  datasource:
+    url:  jdbc:mysql://localhost:3306/padreCode?characterEncoding=UTF8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password:
+    jpa:
+      show.sql: true
+      generate-dll: true
+      database: mysql
+      hibernate:
+        ddl-auto: update
