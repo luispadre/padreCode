@@ -18,4 +18,13 @@ export const routes = [
     component: lazy(() => import('../Pages/NoAuth/Login'))
   },
 
+  {
+    path: "/dashboard",
+    component: lazy(() => import('../Pages/Auth/Dashboard'))
+  },
+  {
+    path:"/my-courses/learning/{id}",
+    component: lazy(() => import('../Pages/Auth/home/MyCourses'))
+  },
+  
 ];

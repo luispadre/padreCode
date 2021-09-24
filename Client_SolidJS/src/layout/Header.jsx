@@ -13,6 +13,13 @@ export default function ({ children }) {
   const home = () => {
     navigate("/");
   };
+  const login = () => {
+    navigate("/login");
+  };
+  const join = () => {
+    navigate("/register");
+  };
+
   const [toggleMenu, setToggleMenu] = createSignal(false);
 
   const handleToggle = () => setToggleMenu(!toggleMenu());
@@ -33,7 +40,9 @@ export default function ({ children }) {
           shadow-md
         "
       >
-        <div onClick={() => home()}>PADRECODE</div>
+        <div onClick={() => home()}>
+          <button>PADRECODE</button>
+        </div>
 
         <svg
           onClick={handleToggle}
@@ -68,40 +77,53 @@ export default function ({ children }) {
               md:justify-between 
               md:pt-0"
           >
-            {location.pathname === "/register" ? (
+            {location.pathname === "/register" ||
+            location.pathname === "/login" ? (
               <>
                 <></>
                 <li>
-                  <a class="md:p-4 py-2 block hover:text-purple-400">Login</a>
+                  <button
+                    class="md:p-4 py-2 block hover:text-purple-400"
+                    onClick={() => login()}
+                  >
+                    Login
+                  </button>
                 </li>
                 <li>
-                  <a class="md:p-4 py-2 block hover:text-purple-400">Join</a>
+                  <button
+                    class="md:p-4 py-2 block hover:text-purple-400"
+                    onClick={() => join()}
+                  >
+                    Join
+                  </button>
                 </li>
               </>
             ) : (
               <>
                 <li>
-                  <a class="md:p-4 py-2 block hover:text-purple-400">Cursos</a>
+                  <button class="md:p-4 py-2 block hover:text-purple-400">
+                    Cursos
+                  </button>
                 </li>
                 <li>
-                  <a class="md:p-4 py-2 block hover:text-purple-400">
+                  <button class="md:p-4 py-2 block hover:text-purple-400">
                     Desafios
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a class="md:p-4 py-2 block hover:text-purple-400">
+                  <button class="md:p-4 py-2 block hover:text-purple-400">
                     Comunidad
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a class="md:p-4 py-2 block hover:text-purple-400">
+                  <button class="md:p-4 py-2 block hover:text-purple-400">
                     Preguntas mas frecuentes
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a class="md:p-4 py-2 block hover:text-purple-400 text-purple-500">
+                  <button class="md:p-4 py-2 block hover:text-purple-400 text-purple-500">
                     Roadmap
-                  </a>
+                  </button>
                 </li>
               </>
             )}

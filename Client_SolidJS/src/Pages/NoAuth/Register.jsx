@@ -17,9 +17,9 @@ export default function Register() {
 
   const submitData = () => {
     if (store?.name && store?.email) {
-      setShowMessage({ show: true, type: "success" });
+      setShowMessage({ show: true, type: "success",msg:"Ingresa a tu correo para ingresar a tu cuenta" });
     } else {
-      setShowMessage({ show: true, type: "error" });
+      setShowMessage({ show: true, type: "error", mgsError:"Parece que el correo utilizado ya esta siendo utilizado.",msgstrong:"¡Error!"});
     }
   };
 
@@ -169,7 +169,9 @@ export default function Register() {
 const Message = ({ showMessage }) => {
   let color=showMessage().type==='success'?'green':'red';
 
-
+  // msg
+  // mgsError
+  // msgstrong
   return (
     <>
       <div
@@ -177,10 +179,11 @@ const Message = ({ showMessage }) => {
         role="alert"
       >
         <strong class="font-bold">
-          ¡Error!
+          {showMessage().type!=='success'&&'¡Error!'}
         </strong>
         <span class="block sm:inline">
-          Parece que el correo utilizado ya esta siendo utilizado.
+          {showMessage().type!=='success'?showMessage()?.mgsError:showMessage()?.msg}
+          
         </span>
         <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
           <svg

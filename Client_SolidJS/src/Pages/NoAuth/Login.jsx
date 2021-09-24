@@ -32,7 +32,7 @@ export default function () {
                 <div class="mt-6">
                   <span class="block w-full rounded-md shadow-sm">
                     <button
-                      type="submit"
+                      type="button"
                       class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 transition duration-150 ease-in-out hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring  focus:ring-blue-400  active:bg-blue-700"
                     >
                       Continue
@@ -40,13 +40,7 @@ export default function () {
                   </span>
                 </div>
                 <div class="text-xs mt-3 text-right">
-                  <a
-                    target="_blank"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSewaOZmyWnYN-hG9sQ8s-HiW73tP7xGj60pj9YRk1E5yTX00w/viewform"
-                    class="font-medium text-gray-500 underline"
-                  >
-                    이메일 계정 찾기 →
-                  </a>
+                  -
                 </div>
               </form>
             </div>
